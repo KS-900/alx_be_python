@@ -1,5 +1,5 @@
 import sys
-from robust_division_calculator import safe_divide
+from robust_division_calculator import safe_divide # type: ignore
 
 def main():
     if len(sys.argv) != 3:
