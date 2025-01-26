@@ -1,16 +1,17 @@
-import sys
-from robust_division_calculator import safe_divide # type: ignore
+from book_class import Book # type: ignore
 
 def main():
-    if len(sys.argv) != 3:
-        print("Usage: python main.py <numerator> <denominator>")
-        sys.exit(1)
+    # Creating an instance of Book
+    my_book = Book("1984", "George Orwell", 1949)
 
-    numerator = sys.argv[1]
-    denominator = sys.argv[2]
+    # Demonstrating the __str__ method
+    print(my_book)  # Expected to use __str__
 
-    result = safe_divide(numerator, denominator)
-    print(result)
+    # Demonstrating the __repr__ method
+    print(repr(my_book))  # Expected to use __repr__
+
+    # Deleting a book instance to trigger __del__
+    del my_book
 
 if __name__ == "__main__":
     main()
